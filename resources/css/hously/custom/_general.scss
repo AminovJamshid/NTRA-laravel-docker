@@ -1,0 +1,21 @@
+/* // _helper.scss */
+
+/*********************************/
+/*             Helper            */
+/*===============================*/
+
+body {
+    @apply font-body text-base text-black dark:text-white;
+}
+
+p {
+    @apply leading-relaxed;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    @apply font-body leading-normal;
+}
+
+::selection {
+    @apply bg-green-600/90 text-white;
+}

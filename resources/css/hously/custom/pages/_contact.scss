@@ -1,0 +1,63 @@
+/*********************************/
+/*             Contact           */
+/*===============================*/
+.form-input {
+    @apply w-full py-2 px-3 border border-inherit dark:border-gray-800 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none bg-transparent;
+    &:focus {
+        @apply border-green-600 shadow-none ring-0;
+    }
+    &.textarea {
+        @apply h-28;
+    }
+}
+
+/* Validation */
+.error {
+    @apply my-2 mx-0 hidden text-red-600;
+}
+  
+#ajaxsuccess {
+    @apply text-base w-full hidden clear-both my-2 mx-0;
+}
+
+.error_message,
+#success_page {
+    @apply p-2.5 mb-5 text-center rounded-md;
+}
+
+.error_message {
+    @apply bg-red-600/5 text-red-600;
+}
+
+.contact-loader {
+    @apply hidden;
+}
+  
+#success_page {
+    @apply bg-green-600/5 text-green-600;
+}
+
+
+/*****************/
+/* Subscribe Form */
+/*****************/
+.subcribe-form {
+    form {
+        input {
+            @apply pt-4 pe-40 pb-4 ps-6 w-full h-[50px] outline-none text-black dark:text-white;
+        }
+        .btn {
+            @apply absolute top-[2px] end-[3px] h-[46px];
+        }
+    }
+}
+
+
+/*****************/
+/* Job search form */
+/*****************/
+.filter-input-box,
+.filter-input-box.form-select,
+.filter-search-form .choices__inner {
+    @apply shadow-none border-0 rounded-none text-[15px] h-[60px] pt-[13px] pe-[6px] pb-[15px] ps-[45px];
+}

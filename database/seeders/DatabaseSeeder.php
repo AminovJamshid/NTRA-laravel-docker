@@ -2,10 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ad;
+use App\Models\Branch;
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Factories\BranchFactory;
+use Hash;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,12 +18,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
+        $this->call([
+            BranchSeeder::class,
+            AdsSeeder::class,
+            UserSeeder::class,
+            StatusSeeder::class
+        ]);
         User::factory()->create([
-            'username' => 'jamshid',
-            'email' => 'jamshid@gmail.com',
-            'password' => Hash::make('1234'),
+            'username' => 'Jamshid',
+            'email' => 'jamshidbek@gmail.com',
+            'password' => Hash::make('12345678'),
         ]);
     }
 }

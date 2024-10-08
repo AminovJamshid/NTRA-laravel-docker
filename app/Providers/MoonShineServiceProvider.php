@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Models\Ad;
+use App\Models\Bookmarked;
+use App\MoonShine\Resources\AdImagesResource;
+use App\MoonShine\Resources\AdResource;
+use App\MoonShine\Resources\BookmarkedResource;
+use App\MoonShine\Resources\BranchResource;
+use App\MoonShine\Resources\UsersResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -50,9 +57,21 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 ),
             ]),
 
-            MenuItem::make('Documentation', 'https://moonshine-laravel.com/docs')
-                ->badge(fn() => 'Check')
-                ->blank(),
+            MenuItem::make("E'lonlar", new AdResource())->icon("heroicons.home-modern"),
+            MenuItem::make("Home", url('/'))->icon("heroicons.home")->customLinkAttributes(['target' => '_blank']),
+
+            MenuItem::make("Filiallar",new BranchResource())->icon("heroicons.map-pin"),
+
+
+            MenuItem::make("Foydalanuvchilar",new UsersResource())->icon("heroicons.users"),
+
+            MenuItem::make("Saqlanmalar",new BookmarkedResource())->icon("heroicons.bookmark"),
+
+            MenuItem::make("Rasmlar", new AdImagesResource())->icon("heroicons.photo"),
+
+
+
+
         ];
     }
 

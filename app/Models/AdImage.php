@@ -10,12 +10,12 @@ class AdImage extends Model
     use HasFactory;
 
     protected $fillable = [
-        'ad_id',
         'name',
+        'ad_id',
     ];
-
-    public function ad(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public  function  ad(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
+
         return $this->belongsTo(Ad::class);
     }
 }

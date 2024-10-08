@@ -85,7 +85,7 @@ return [
         'providers' => [
             'moonshine' => [
                 'driver' => 'eloquent',
-                'model' => MoonshineUser::class,
+                'model' => env('AUTH_MODEL', App\Models\User::class),
             ],
         ],
         'pipelines' => [],

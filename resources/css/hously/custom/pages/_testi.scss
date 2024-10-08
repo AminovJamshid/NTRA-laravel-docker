@@ -1,0 +1,60 @@
+/*********************************/
+/*         Testimonial           */
+/*===============================*/
+.client-testi {
+    @apply cursor-e-resize;
+    .content {
+        @apply before:content-[''] before:absolute before:top-8 before:start-0 before:ms-3 before:box-border before:border-8 before:border-solid before:origin-[0] before:rotate-[135deg] before:shadow before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent;
+    }
+}
+
+.customer-testi {
+    @apply cursor-e-resize;
+    .content {
+        &:before {
+            transform-origin: 0 0;
+        }
+
+        @apply before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700;
+    }
+}
+
+.tns-nav {
+    @apply text-center mt-3;
+    button {
+        @apply rounded-full bg-black/20 dark:bg-white/20 transition-all duration-500 ease-in-out border-2 border-white dark:border-slate-900 m-1 p-[2px];
+        &.tns-nav-active {
+            @apply bg-green-600 border-green-600;
+        }
+    }
+}
+
+/* Tns control */
+.tns-controls {
+    button[data-controls="prev"],
+    button[data-controls="next"] {
+        @apply absolute top-2/4 -translate-y-2/4 text-base size-8 rounded-full bg-white dark:bg-slate-900 text-dark dark:text-white border-0 transition-all duration-500 ease-in-out z-10 shadow-md dark:shadow-gray-700;
+
+        &:hover {
+            @apply bg-green-600 text-white;
+        }
+    }
+    button[data-controls="prev"] {
+        @apply start-0;
+    }
+    button[data-controls="next"] {
+        @apply end-0;
+    }
+}
+
+/* RTL */
+html[dir="rtl"]{
+    .tns-inner, .tns-nav, .swiper-slider-hero {
+        direction: ltr !important;
+    }
+
+    .tns-visually-hidden {
+        left: 0 !important;
+        visibility: hidden;
+    }
+}
